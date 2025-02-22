@@ -4,9 +4,7 @@ import s from './ContactList.module.css';
 
 const ContactList = () => {
   const contacts = useSelector(state => state.contacts.items);
-
   const filter = useSelector(state => state.filters.name);
-
   const filteredData = contacts.filter(item =>
     item.name.toLowerCase().includes(filter.toLowerCase()),
   );
