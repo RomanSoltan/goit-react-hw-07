@@ -26,7 +26,9 @@ function App() {
       <h1 className={s.title}>Phonebook</h1>
       <ContactForm />
       <SearchBox />
-      {isLoading && !isError && <b>Request in progress...</b>}
+      {isLoading && !isError && (
+        <p className={s.descr}>Request in progress...</p>
+      )}
       <ContactList />
       <ToastContainer />
     </div>
