@@ -6,11 +6,12 @@ import { ToastContainer } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts } from '../../redux/contactsOps';
+import { selectError, selectLoading } from '../../redux/contactsSlice';
 
 function App() {
   const dispatch = useDispatch();
-  const isLoading = useSelector(state => state.contacts.loading);
-  const isError = useSelector(state => state.contacts.error);
+  const isLoading = useSelector(selectLoading);
+  const isError = useSelector(selectError);
 
   useEffect(() => {
     const abortController = new AbortController();
